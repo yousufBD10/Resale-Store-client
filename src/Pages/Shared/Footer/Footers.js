@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footers = () => {
     return (
-        <Footer container={true}>
+        <Footer className='mt-8' container={true}>
   <div className="w-full text-center">
     <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
       <Footer.Brand
