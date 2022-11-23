@@ -1,5 +1,6 @@
 import { Button, Carousel } from "flowbite-react";
 import React from "react";
+import Info from "./Info";
 
 const Home = () => {
   return (
@@ -46,7 +47,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div >
+      <div className="my-8">
         <h1 className="text-3xl flex font-bold justify-center mt-8">Shop & Sell By Category</h1>
         <div className="mt-8">
             <div className="flex justify-center gap-8 " >
@@ -68,7 +69,8 @@ const Home = () => {
                 </div>
             </div>
         </div>
-      </div>
+      </div  >
+      <Info></Info>
     </div>
   );
 };
