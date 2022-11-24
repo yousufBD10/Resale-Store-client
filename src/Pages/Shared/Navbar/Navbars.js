@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Navbars = () => {
     return (
-        <Navbar className='bg-sky-800 text-white '
+        <Navbar className='bg-sky-800  '
         fluid={true}
         rounded={true}
       >
