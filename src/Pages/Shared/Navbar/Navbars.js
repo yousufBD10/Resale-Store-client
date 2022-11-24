@@ -13,7 +13,7 @@ const Navbars = () => {
     .catch(error=>console.error(error))
 }
     return (
-        <Navbar className='bg-sky-800  '
+        <Navbar className='bg-sky-800 text-white  '
         fluid={true}
         rounded={true}
       >
