@@ -1,10 +1,12 @@
 import { Button, Card } from "flowbite-react";
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import ProductModal from "./ProductModal";
 
 const ProductCard = () => {
   const products = useLoaderData();
-  console.log(products);
+
+
 
   return (
     <div className=" grid gap-5 lg:grid-cols-3 md:grid-cols-2">
@@ -33,10 +35,11 @@ const ProductCard = () => {
             Seller Name : {product.seller_name}
           </p>
           <div>
-            <Button className="w-full">Book Now</Button>
+            <Button  className="w-full">Book Now</Button>
           </div>
         </Card>
       ))}
+      {/* <ProductModal ></ProductModal> */}
     </div>
   );
 };
