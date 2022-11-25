@@ -36,10 +36,13 @@ const ProductCard = () => {
           </p>
           <div>
             <Button  className="w-full">Book Now</Button>
+        
+     
+    
           </div>
         </Card>
       ))}
-      {/* <ProductModal ></ProductModal> */}
+    
     </div>
   );
 };
