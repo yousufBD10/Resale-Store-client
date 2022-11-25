@@ -28,7 +28,7 @@ const Navbars = () => {
           </span>
         </Navbar.Brand>
         <Navbar.Toggle />
-        <Navbar.Collapse className='pr-12'>
+        <Navbar.Collapse className='pr-12 pt-2 items-center'>
           <Link
             to="/"
            

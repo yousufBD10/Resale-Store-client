@@ -4,6 +4,8 @@ import { useLoaderData } from "react-router-dom";
 import ProductModal from "./ProductModal";
 
 const ProductCard = () => {
+  const [product,setProduct] = useState(null);
+  const [openModal,setOpenModal] = useState(false);
   const products = useLoaderData();
 
 
@@ -35,14 +37,21 @@ const ProductCard = () => {
             Seller Name : {product.seller_name}
           </p>
           <div>
-            <Button  className="w-full">Book Now</Button>
-        
-     
+            {/* <Button onClick={()=> setOpenModal(true)}  className="w-full">Book Now</Button> */}
+            <label  onClick={()=>setProduct(product)} htmlFor="my-modal-3" className="btn btn-primary w-full">Book Now</label>
     
           </div>
         </Card>
       ))}
-    
+
+    <div>
+    { product && <ProductModal
+            
+             product={product}
+             setProduct={ setProduct}
+
+             ></ProductModal>}
+    </div>
     </div>
   );
 };

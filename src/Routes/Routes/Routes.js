@@ -9,6 +9,7 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import ProductCard from "../../Pages/ProductCard/ProductCard";
 import Register from "../../Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoute";
 
 
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         },
         {
        path:'/:brand',
-       element:<ProductCard></ProductCard>,
+       element:<PrivateRoutes><ProductCard></ProductCard></PrivateRoutes>,
        loader: ({params})=> fetch(`http://localhost:5000/${params.brand}`)
 
         },
