@@ -14,12 +14,8 @@ const Register = () => {
 
   const { createUser, updateUserProfile ,sinInGoogle} = useContext(AuthContext);
   const [signUpError, setSignUpError] = useState("");
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const [createdUserEmail, setCreatedUserEmail] = useState("");
+  const {register,formState: { errors }, handleSubmit,} = useForm();
+ 
 
   const onSubmit = (data) => {
     console.log(data.name, data.email, data.type, data.password);
@@ -80,7 +76,7 @@ const Register = () => {
       .then((data) => {
         console.log(data);
         navigate("/");
-        setCreatedUserEmail(email);
+      
       });
   };
 
