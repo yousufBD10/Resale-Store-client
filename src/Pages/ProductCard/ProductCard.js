@@ -1,9 +1,11 @@
 import { Button, Card } from "flowbite-react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 import ProductModal from "./ProductModal";
 
 const ProductCard = () => {
+  const {user} = useContext(AuthContext)
   const [product,setProduct] = useState(null);
   const [openModal,setOpenModal] = useState(false);
   const products = useLoaderData();
@@ -46,7 +48,7 @@ const ProductCard = () => {
 
     <div>
     { product && <ProductModal
-            
+            user={user}
              product={product}
              setProduct={ setProduct}
 
