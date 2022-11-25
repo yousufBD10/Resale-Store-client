@@ -35,6 +35,12 @@ const Navbars = () => {
           >
             Home
           </Link>
+          <Link
+            to="/dashboard"
+           
+          >
+         Dashboard
+          </Link>
           <Navbar.Link to="/">
             About
           </Navbar.Link>
