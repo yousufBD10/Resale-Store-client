@@ -2,6 +2,7 @@ import { Navbar } from 'flowbite-react';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import logo from '../../../assets/info_image/resale.png'
 
 const Navbars = () => {
   const {user,logOut} = useContext(AuthContext);
@@ -19,12 +20,12 @@ const Navbars = () => {
       >
         <Navbar.Brand to="/" className='px-12'>
         <Link>  <img
-            src="https://flowbite.com/docs/images/logo.svg"
+            src={logo}
             className="mr-3 h-6 sm:h-9"
-            alt="Flowbite Logo"
+            alt=" Logo"
           /></Link>
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-            Flowbite
+            Resale Store
           </span>
         </Navbar.Brand>
         <Navbar.Toggle />

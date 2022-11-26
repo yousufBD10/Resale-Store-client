@@ -1,70 +1,101 @@
 import { Button, Label, Select, TextInput } from 'flowbite-react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const AddProducts = () => {
+  const {user} = useContext(AuthContext);
+  const navigate = useNavigate()
     const {register,formState: { errors }, handleSubmit,} = useForm();
-    const onSubmit = (data) => {
-        const date = new Date();
-       
-        const verified= false;
-        console.log(data.name,
-             data.products,
-             data.original_price,
-             data.resale_price,
-             data.condition,
-             data.category,
-             data.used,
-             data.file,
-             date,
-             verified,
-             data.Location,
-              data.Phone, data.description);
+    // const onSubmit = (data) => {
       
-      };
+    //   const date = new Date();
+    //     const verified= false;
+    //     console.log(data.name,
+    //          data.products,
+    //          data.original_price,
+    //          data.resale_price,
+    //          data.condition,
+    //          data.category,
+    //          data.used,
+    //          data.file,
+    //          date,
+    //          verified,
+    //          data.Location,
+    //           data.Phone, data.description);
 
-    //   const handleAddDoctors = (data) => {
-    //     console.log( imageHostKey);
-    //     const image = data.image[0];
-    //     const formData = new FormData();
-    //     formData.append('image', image);
-    //     const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMAGE_API}`
-    //     console.log(url);
-    //     fetch(url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //     .then(res => res.json())
-    //     .then(imgData => {
-    //         if(imgData.success){
-    //             console.log(imgData.data.url);
-    //             const doctor = {
-    //                 name: data.name, 
-    //                 email: data.email,
-    //                 specialty: data.specialty,
-    //                 image: imgData.data.url
-    //             }
-    //             fetch('http://localhost:5000/doctors', {
-    //                 method: 'POST',
-    //                 headers: {
-    //                     'content-type': 'application/json', 
-    //                     authorization: `bearer ${localStorage.getItem('accessToken')}`
-    //                 },
-    //                 body: JSON.stringify(doctor)
-    //             })
-    //             .then(res => res.json())
-    //             .then(result =>{
-    //                 console.log(result);
-    //                 toast.success(`${data.name} is added successfully`);
-    //                 // navigate('/dashboard/managedoctors')
-    //             })
-    //         }
-    //     })
-    // }
+    const handleAddproduct = (data) => {
+      const date = new Date();
+          const verified= false;
+      const imageHostKey = process.env.REACT_APP_IMAGE_API;
+      console.log( imageHostKey);
+      const image = data.file[0];
+      const name = data.name;
+      const products = data.products;
+      const original_price = data.original_price;
+      const resale_price = data.resale_price;
+      const condition = data.condition;
+      const category = data.category;
+      const used = data.used;
+      const Location = data.Location;
+      const phone = data.phone;
+      const email = user.email;
+      const description = data.description;
+      const formData = new FormData();
+      formData.append('image', image);
+      const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IMAGE_API}`
+      console.log(url);
+      fetch(url, {
+          method: 'POST',
+          body: formData
+      })
+      .then(res => res.json())
+      .then(imgData => {
+        const image = imgData.data.url
+          if(imgData.success){
+              console.log(imgData.data.url);
+              const product = {
+              seller_name: name,
+         name: products,
+          original_price,
+          resale_price,
+          condition,
+          brand:category,
+          used,
+          email,
+          post_date: date,
+           verified,
+         location: Location,
+           phone,description,
+                  image
+              }
+              fetch('http://localhost:5000/products', {
+                  method: 'POST',
+                  headers: {
+                      'content-type': 'application/json', 
+                      authorization: `bearer ${localStorage.getItem('accessToken')}`
+                  },
+                  body: JSON.stringify(product)
+              })
+              .then(res => res.json())
+              .then(result =>{
+                  console.log(result);
+                  toast.success(`Your products is added successfully`);
+                  navigate('/dashboard/myproducts')
+              })
+          }
+      })
+  }
 
-    // if(isLoading){
-    //     return <Loading></Loading>
-    // }
+  // if(isLoading){
+  //     return <Loading></Loading>
+  // }
+      
+      // };
+
+     
 
 
     return (
@@ -73,7 +104,7 @@ const AddProducts = () => {
           <div className="sm:text-3xl text-2xl font-semibold text-center mb-12">
            Add A Products
           </div>
-          <form onSubmit={handleSubmit(onSubmit)} className="">
+          <form onSubmit={handleSubmit(handleAddproduct)} className="">
             <div>
             <div className="mb-2 block">
       <Label
