@@ -7,8 +7,8 @@ const AllBuyers = () => {
   console.log(buyer);
   return (
     <div>
-      <h2 className="text-5xl">all Buyers : {buyer.length}</h2>
       <Table>
+     
         <Table.Head>
           <Table.HeadCell>No. </Table.HeadCell>
           <Table.HeadCell>User Name</Table.HeadCell>
@@ -24,7 +24,7 @@ const AllBuyers = () => {
             </Table.Cell>
             <Table.Cell>{br.name}</Table.Cell>
             <Table.Cell>{br.email}</Table.Cell>
-            <Table.Cell><button className="btn btn-error">Delete</button></Table.Cell>
+            <Table.Cell><button className="btn btn-error btn-sm">Delete</button></Table.Cell>
           </Table.Row> )
           }
 

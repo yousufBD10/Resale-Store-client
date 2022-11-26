@@ -1,17 +1,21 @@
 import { Footer } from 'flowbite-react';
 import React from 'react';
+import logo from '../../../assets/info_image/resale.png'
 
 const Footers = () => {
     return (
         <Footer className='mt-8' container={true}>
   <div className="w-full text-center">
     <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-      <Footer.Brand
-        href="https://flowbite.com"
-        src="https://flowbite.com/docs/images/logo.svg"
-        alt="Flowbite Logo"
-        name="Flowbite"
-      />
+     <div className='flex'>
+     <Footer.Brand
+     
+     src={logo}
+     alt="Logo"
+     
+   />
+   <h2 className='font-bold text-xl'>Resale Store</h2>
+     </div>
       <Footer.LinkGroup>
         <Footer.Link href="#">
           About
@@ -30,7 +34,7 @@ const Footers = () => {
     <Footer.Divider />
     <Footer.Copyright
       href="#"
-      by="Flowbite™"
+      by="Resale Store™"
       year={2022}
     />
   </div>

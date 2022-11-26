@@ -19,14 +19,15 @@ const Navbars = () => {
         rounded={true}
       >
         <Navbar.Brand to="/" className='px-12'>
-        <Link>  <img
+        <Link to='/'>  <img
             src={logo}
             className="mr-3 h-6 sm:h-9"
             alt=" Logo"
           /></Link>
+          <Link to='/'>
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             Resale Store
-          </span>
+          </span></Link>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className='pr-12 pt-2 items-center'>

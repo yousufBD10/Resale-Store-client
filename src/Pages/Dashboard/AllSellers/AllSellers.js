@@ -8,7 +8,7 @@ const AllSellers = () => {
   console.log(AllSellers);
   return (
     <div>
-      <h2 className="text-5xl">all Buyers : {AllSellers.length}</h2>
+     
       <Table>
         <Table.Head>
           <Table.HeadCell>No. </Table.HeadCell>
@@ -25,7 +25,7 @@ const AllSellers = () => {
             </Table.Cell>
             <Table.Cell>{br.name}</Table.Cell>
             <Table.Cell>{br.email}</Table.Cell>
-            <Table.Cell><button className="btn btn-error">Delete</button></Table.Cell>
+            <Table.Cell><button className="btn btn-error btn-sm">Delete</button></Table.Cell>
           </Table.Row> )
           }
 

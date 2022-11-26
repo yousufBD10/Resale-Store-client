@@ -46,6 +46,11 @@ const DashboardLeyout = () => {
             
         
             <li>
+            <Link to="/dashboard/approvedpost">Approved Request  </Link>
+            
+            </li>
+        
+            <li>
             <Link to="/dashboard/reporteditems">Reported Items </Link>
             
             </li>
