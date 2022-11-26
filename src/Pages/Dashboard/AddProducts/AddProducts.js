@@ -29,6 +29,7 @@ const AddProducts = () => {
     const handleAddproduct = (data) => {
       const date = new Date();
           const verified= false;
+          const isApproved= false;
       const imageHostKey = process.env.REACT_APP_IMAGE_API;
       console.log( imageHostKey);
       const image = data.file[0];
@@ -67,6 +68,7 @@ const AddProducts = () => {
           email,
           post_date: date,
            verified,
+           isApproved,
          location: Location,
            phone,description,
                   image

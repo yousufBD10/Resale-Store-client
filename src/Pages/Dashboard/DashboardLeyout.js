@@ -39,12 +39,11 @@ const DashboardLeyout = () => {
                 <li>
               <Link to="/dashboard/seller">All Sellers</Link>
             </li>
+      
             <li>
               <Link to="/dashboard/buyer">All Buyers</Link>
             
             </li>
-            
-        
             <li>
             <Link to="/dashboard/approvedpost">Approved Request  </Link>
             

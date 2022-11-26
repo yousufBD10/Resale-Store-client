@@ -1,19 +1,31 @@
 import { Button, Card } from "flowbite-react";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import ProductModal from "./ProductModal";
+import axios from "axios";
 
 const ProductCard = () => {
+  const [verified,setVerified] = useState(null);
+  console.log(verified);
+
   const {user} = useContext(AuthContext)
   const [product,setProduct] = useState(null);
-  const [openModal,setOpenModal] = useState(false);
+  
   const products = useLoaderData();
 
+  useEffect(() => {
+    axios.get('http://localhost:5000/allusers').then((response) => {
+      setVerified(response.data);
+    });
+  }, []);
 
 
   return (
     <div className=" grid gap-5 lg:grid-cols-3 md:grid-cols-2">
+      
+      
+      
       {products.map((product) => (
         <Card imgSrc={product.image}>
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { Avatar, Table } from "flowbite-react";
 import React from "react";
+import toast from "react-hot-toast";
 
 const ApprovedPost = () => {
   const { data: posts = [], refetch } = useQuery({
-    queryKey: ["appointment"],
+    queryKey: ["approvedpost"],
     queryFn: async () => {
       const res = await fetch("http://localhost:5000/dashboard/approvedpost");
       const data = await res.json();
@@ -22,6 +23,9 @@ const ApprovedPost = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            if(data.acknowledged){
+                toast.success('Post request approved')
+            }
             refetch();
         })
     }

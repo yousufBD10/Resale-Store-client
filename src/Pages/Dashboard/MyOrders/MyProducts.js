@@ -7,16 +7,6 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 const MyProducts = () => {
   const {user,loading} = useContext(AuthContext);
 
-//   const [products,setProducts] = useState([])
-
-// useEffect((()=>{
-//   fetch( `http://localhost:5000/myorders?email=${user?.email}`)
-//   .then(res => res.json())
-//   .then(data=> setProducts(data))
-// }),[user?.email])
-// console.log(products,user);
-   
-    // const url = `http://localhost:5000/myorders?email=${user?.email}`;
     const {data :products =[],isLoading } = useQuery({
    
       
