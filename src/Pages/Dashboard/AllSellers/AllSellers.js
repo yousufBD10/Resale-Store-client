@@ -20,7 +20,7 @@ const AllSellers = () => {
   console.log(allsellers);
  
 
-  const handleVerifiedn=(id) =>{
+  const handleVerified=(id) =>{
     fetch(`http://localhost:5000/dashboard/users/admin/${id}`,{
         method: 'PUT',
         // headers: {
@@ -35,6 +35,24 @@ const AllSellers = () => {
     })
 
 
+}
+
+
+const handleDelete = (data)=>{
+  console.log(data.user_uid);
+  fetch(`http://localhost:5000/dashbord/seller/${data.user_uid}`, {
+            method: 'DELETE', 
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                refetch();
+                toast.success(`Users deleted successfully`)
+            }
+        })
 }
 
 
@@ -60,13 +78,13 @@ const AllSellers = () => {
             <Table.Cell>{sller.email}</Table.Cell>
             <Table.Cell>
              {
-              sller?.isVarified ? <p className='text-green-600 font-bold'>Verified</p>:<button onClick={()=>handleVerifiedn(sller._id)} className="btn  btn-sm">Not verify</button>
+              sller?.isVarified ? <p className='text-green-600 font-bold'>Verified</p>:<button onClick={()=>handleVerified(sller._id)} className="btn  btn-sm">Not verify</button>
 
              }
               
               
               </Table.Cell>
-            <Table.Cell><button className="btn btn-error btn-sm">Delete</button></Table.Cell>
+            <Table.Cell><button onClick={()=>handleDelete(sller)} className="btn btn-error btn-sm">Delete</button></Table.Cell>
           </Table.Row> 
           )
           }

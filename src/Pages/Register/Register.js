@@ -29,7 +29,7 @@ const Register = () => {
         };
         updateUserProfile(userInfo)
           .then(() => {
-            saveUsers(data.name, data.email, data.type);
+            saveUsers(data.name, data.email, data.type,user.uid);
           })
           .catch((err) => console.log(err));
       })
@@ -47,7 +47,7 @@ const Register = () => {
         const user = result.user;
         console.log(user);
         const role = 'buyer';
-        saveUsers(user.displayName,user.email,role)
+        saveUsers(user.displayName,user.email,role,user.uid)
         
         const currentUser = {
           email: user.email
@@ -63,8 +63,8 @@ const Register = () => {
       });
   };
 
-  const saveUsers = (name, email, role) => {
-    const user = { name, email, role };
+  const saveUsers = (name, email, role,user_uid) => {
+    const user = { name, email, role ,user_uid};
     fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {

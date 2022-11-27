@@ -34,7 +34,9 @@ const MyProducts = () => {
         <th>No.</th>
         <th>Image</th>
         <th>Products Name</th>
-        <th>status</th>
+        <th>Approved status</th>
+        <th>Actions</th>
+        <th>Sell status</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -52,9 +54,13 @@ const MyProducts = () => {
           <td>{
             product?.isApproved ? <p className='text-green-600 font-bold'>Approved</p> :<p className='text-red-600 font-bold'>Pending</p>
             
-            }</td>
+          }</td>
+            <th><button className='btn btn-primary  btn-sm' > Advertise</button></th>
+          <td><p className='font-bold'>Available</p></td>
             <th><button className='btn btn-error  btn-sm' > Delete</button></th>
-        </tr>)
+        </tr>
+        
+        )
       }
       
       

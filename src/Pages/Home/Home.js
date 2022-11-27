@@ -45,19 +45,19 @@ const {data: categories =[],refetch } = useQuery({
                 alt="..."
               />
               <img
-                src="https://www.telegraph.co.uk/content/dam/recommended/2022/05/31/best-Best-laptops-main-image-Best-laptops-for-everyday-use-2022_trans_NvBQzQNjv4BqqVzuuqpFlyLIwiB6NTmJwfSVWeZ_vEN7c6bHu2jJnT8.png?imwidth=680"
+                src="https://cdn.thewirecutter.com/wp-content/media/2021/08/budget-android-phone-2048px-nord-front.jpg"
                 alt="..."
               />
               <img
-                src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+                src="https://b2c-contenthub.com/wp-content/uploads/2022/09/iPhone-14-Pro_review_1.jpg?quality=50&strip=all"
                 alt="..."
               />
               <img
-                src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+                src="https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/f21_pro/listpage/listpage-SunsetOrange-1256_628-pc.jpg"
                 alt="..."
               />
               <img
-                src="https://flowbite.com/docs/images/carousel/carousel-5.svg"
+                src="https://www.techadvisor.com/wp-content/uploads/2022/06/best_smartphone_apr_2022_hero.jpg?quality=50&strip=all"
                 alt="..."
               />
             </Carousel>
