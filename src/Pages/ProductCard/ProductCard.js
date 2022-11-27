@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import ProductModal from "./ProductModal";
-import axios from "axios";
+// import axios from "axios";
 
 const ProductCard = () => {
   const [verified,setVerified] = useState(null);
@@ -14,11 +14,11 @@ const ProductCard = () => {
   
   const products = useLoaderData();
 
-  useEffect(() => {
-    axios.get('http://localhost:5000/allusers').then((response) => {
-      setVerified(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://localhost:5000/allusers').then((response) => {
+  //     setVerified(response.data);
+  //   });
+  // }, []);
 
 
   return (

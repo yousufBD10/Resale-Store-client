@@ -8,12 +8,13 @@ import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
 import ApprovedPost from "../../Pages/Dashboard/ApprovedPost/ApprovedPost";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import DashboardLeyout from "../../Pages/Dashboard/DashboardLeyout";
-import MyProducts from "../../Pages/Dashboard/MyOrders/MyProducts";
+import MyProducts from "../../Pages/Dashboard/MyProduct/MyProducts";
 import DisplayErrors from "../../Pages/DisplayErrors/DisplayErrors";
 
 
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
+import MyOrders from "../../Pages/MyOrders/MyOrders";
 import ProductCard from "../../Pages/ProductCard/ProductCard";
 import Register from "../../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoute";
@@ -88,6 +89,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/approvedpost',
                 element:<ApprovedPost></ApprovedPost>
+                
+            },
+            {
+                path: '/dashboard/myorders',
+                element:<MyOrders></MyOrders>
                 
             },
             {

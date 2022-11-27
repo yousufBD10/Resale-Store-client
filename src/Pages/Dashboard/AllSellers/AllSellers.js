@@ -39,7 +39,8 @@ const AllSellers = () => {
 
 
 const handleDelete = (data)=>{
-  console.log(data.user_uid);
+  // console.log(data.user_uid);
+  const {user_uid} = data;
   fetch(`http://localhost:5000/dashbord/seller/${data.user_uid}`, {
             method: 'DELETE', 
             // headers: {
@@ -50,7 +51,24 @@ const handleDelete = (data)=>{
         .then(data => {
             if(data.deletedCount > 0){
                 refetch();
+                handleDeleteProduct(user_uid)
                 toast.success(`Users deleted successfully`)
+            }
+        })
+}
+  const handleDeleteProduct = (user_uid)=>{
+  console.log(user_uid);
+  fetch(`http://localhost:5000/dashbord/product/${user_uid}`, {
+            method: 'DELETE', 
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                refetch();
+               
             }
         })
 }
