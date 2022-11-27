@@ -27,10 +27,49 @@ const MyOrders = () => {
       </div>
       }
     return (
-        <div>
-            <h2>{orders.length}</h2>
-            {/* this is my orders page{orders.length} */}
-        </div>
+        <div className="overflow-x-auto ">
+         
+        <table className="table w-full">
+          
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>User Name</th>
+              <th>Products Name</th>
+              <th>Payment status</th>
+            
+              <th>Sell status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              orders.map((order,i)=> <tr key={order._id}>
+                <th>{i+1}</th>
+        <td><p className='font-bold'>{order.name}</p></td>
+                <td>  <p className='font-bold'>{order.product_item}</p></td>
+                
+                <td>{
+                  order?.isApproved ? <p className='text-green-600 font-bold '>Paid</p> :<button className='text-red-600 font-bold btn btn-outline btn-sm'>Unpaid</button>
+                  
+                }</td>
+                <td>{
+                  order?.isApproved ? <p className='text-green-600 font-bold '>Sold</p> :<p className='text-red-600 font-bold '>Unsold</p>
+                  
+                }</td>
+                 
+               
+                  <th><button className='btn btn-error  btn-sm' > Delete</button></th>
+              </tr>
+              
+              )
+            }
+            
+            
+           
+          </tbody>
+        </table>
+      </div>
     );
 };
 

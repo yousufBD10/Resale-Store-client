@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { Spinner, Table } from "flowbite-react";
 import React from "react";
+import toast from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const AllBuyers = () => {
@@ -16,6 +17,41 @@ const AllBuyers = () => {
       },
 
     });
+
+    
+const handleDelete = (data)=>{
+  // console.log(data.user_uid);
+  const {user_uid} = data;
+  // fetch(`http://localhost:5000/dashbord/buyer/${user_uid}`, {
+  //           method: 'DELETE', 
+  //           // headers: {
+  //           //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+  //           // }
+  //       })
+  //       .then(res => res.json())
+  //       .then(data => {
+  //           if(data.deletedCount > 0){
+  //               refetch();
+  //               // handleDeleteProduct(user_uid)
+  //               toast.success(`Users deleted successfully`)
+  //           }
+  //       })
+   console.log(user_uid);
+}
+  // fetch(`http://localhost:5000/dashbord/product/${user_uid}`, {
+  //           method: 'DELETE', 
+  //           // headers: {
+  //           //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+  //           // }
+  //       })
+  //       .then(res => res.json())
+  //       .then(data => {
+  //           if(data.deletedCount > 0){
+  //               refetch();
+               
+  //           }
+  //       })
+// }
 
     if(isLoading){
       <div className="text-center">
@@ -42,8 +78,8 @@ const AllBuyers = () => {
            {i+1}
             </Table.Cell>
             <Table.Cell>{br.name}</Table.Cell>
+            <Table.Cell><button onClick={()=>console.log(br.user_uid)} className="btn btn-error btn-sm">Delete</button></Table.Cell>
             <Table.Cell>{br.email}</Table.Cell>
-            <Table.Cell><button className="btn btn-error btn-sm">Delete</button></Table.Cell>
           </Table.Row> )
           }
 

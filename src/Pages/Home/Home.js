@@ -1,27 +1,49 @@
 import { useQuery } from "@tanstack/react-query";
-import { Button, Carousel } from "flowbite-react";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Button, Carousel, Spinner } from "flowbite-react";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Advertise from "./Advertise";
 import Info from "./Info";
 
 const Home = () => {
-    const url = 'http://localhost:5000/categories';
-const {data: categories =[],refetch } = useQuery({
+
+  const [advertises,setAdvertises] = useState([]);
+  useEffect(()=>{
+    fetch('http://localhost:5000/alladvertise')
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data);
+      setAdvertises(data)
+    })
+  },[])
+
+
+        // const {advertised} =useParams()
+        // console.log(advertised);
+   
+// const {data: advertises =[],refetch,isLoading } = useQuery({
   
-    queryKey:['categories'],
-    queryFn:async()=>{
-        const res = await fetch(url,{
-          
-        });
-        const data = await res.json();
-        return data;
-    }
+//     queryKey:['alladvertise'],
+//     queryFn:async()=>{
+//         const res = await fetch('http://localhost:5000/alladvertise');
+//         const data = await res.json();
+//         return data;
+//     }
 
     
-});
+// });
+
+
+// if(isLoading){
+//   <div className="text-center">
+//   <Spinner aria-label="Center-aligned spinner example" />
+// </div>
+// }
+// console.log(advertises);
 
   return (
     <div className="min-h-screen">
+   
       <div className="lg:flex items-center ">
         <div className="lg:w-1/2 p-3">
           <h1 className="text-5xl font-bold mb-5">
@@ -104,6 +126,7 @@ const {data: categories =[],refetch } = useQuery({
             </div>
         </div>
       </div  >
+      <Advertise advertises={advertises}></Advertise>
       <Info></Info>
     </div>
   );

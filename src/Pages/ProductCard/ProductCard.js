@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthProvider";
 import ProductModal from "./ProductModal";
 // import axios from "axios";
+import tick from '../../assets/info_image/tick.png'
 
 const ProductCard = () => {
   const [verified,setVerified] = useState(null);
@@ -13,6 +14,7 @@ const ProductCard = () => {
   const [product,setProduct] = useState(null);
   
   const products = useLoaderData();
+  console.log(products);
 
   // useEffect(() => {
   //   axios.get('http://localhost:5000/allusers').then((response) => {
@@ -43,13 +45,22 @@ const ProductCard = () => {
           <p className="font-bold tracking-tight text-gray-900 dark:text-white">
             Used : {product.used}
           </p>
-          <div className="flex justify-between">
+         
             <p>Location : {product.location}</p>
-            <p>Post Date : {product.post_date}</p>
-          </div>
-          <p className="font-normal text-gray-700 dark:text-gray-400">
-            Seller Name : {product.seller_name}
-          </p>
+            <p>Post Date : {product.post_date.slice(0,10)}</p>
+          
+         {
+          product?.isVarified
+           ? <div className="flex">
+            <p>Seller Name : </p>
+            <div className="flex">
+              <img className="w-6" src={tick} alt="" />
+              <div><p>{product?.seller_name}</p></div>
+            </div>
+        </div> : <p className="font-normal text-gray-700 dark:text-gray-400">
+          Seller Name : {product.seller_name}
+        </p>
+         }
           <div>
             {/* <Button onClick={()=> setOpenModal(true)}  className="w-full">Book Now</Button> */}
             <label  onClick={()=>setProduct(product)} htmlFor="my-modal-3" className="btn btn-primary w-full">Book Now</label>

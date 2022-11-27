@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 const ProductModal = ({user,product,setProduct}) => {
   const {name,resale_price,_id} = product;
   console.log(product);
-  const {displayName,email} = user;
+  const {displayName,email,uid} = user;
 
   const handleBooking = event =>{
     event.preventDefault();
@@ -24,7 +24,8 @@ const ProductModal = ({user,product,setProduct}) => {
         email, 
         product_item :name,
         price:resale_price,
-        booking_id: _id
+        booking_id: _id,
+        user_uid: uid
     }
     console.log(booked);
     fetch('http://localhost:5000/booking',{

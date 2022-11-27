@@ -7,7 +7,7 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 const MyProducts = () => {
   const {user,loading} = useContext(AuthContext);
 
-    const {data :products =[],isLoading } = useQuery({
+    const {data :products =[],isLoading ,refetch} = useQuery({
    
       
         queryKey:['myorders',user?.email],
@@ -19,6 +19,38 @@ const MyProducts = () => {
           
         })
         console.log(products,user?.email);
+
+        const handleAdversise =(id)=>{
+          console.log(id);
+          fetch(`http://localhost:5000/dashboard/advertise/${id}`,{
+            method: 'PUT',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res =>res.json())
+        .then(data=>{
+            console.log(data);
+            refetch()
+         
+        })
+        }
+
+        const handleDeleteProduct =(id)=>{
+          console.log(id);
+          fetch(`http://localhost:5000/dashboard/productsdelete/${id}`,{
+            method: 'DELETE',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res =>res.json())
+        .then(data=>{
+            console.log(data);
+            refetch()
+         
+        })
+        }
 
     if(loading || isLoading){
       return <progress className="progress center w-56"></progress>
@@ -55,9 +87,13 @@ const MyProducts = () => {
             product?.isApproved ? <p className='text-green-600 font-bold'>Approved</p> :<p className='text-red-600 font-bold'>Pending</p>
             
           }</td>
-            <th><button className='btn btn-primary  btn-sm' > Advertise</button></th>
+            <th>
+              {
+                product?.isAdvertise ? <p className='text-green-500 font-bold'>Advertised</p> :<button onClick={()=>handleAdversise(product._id)} className='btn btn-primary  btn-sm' > Advertise</button>
+              }
+            </th>
           <td><p className='font-bold'>Available</p></td>
-            <th><button className='btn btn-error  btn-sm' > Delete</button></th>
+            <th><button onClick={()=>handleDeleteProduct(product._id)} className='btn btn-error  btn-sm' > Delete</button></th>
         </tr>
         
         )

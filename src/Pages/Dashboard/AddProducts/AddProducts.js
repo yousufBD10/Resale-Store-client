@@ -29,7 +29,7 @@ const AddProducts = () => {
     const handleAddproduct = (data) => {
       const date = new Date();
           const verified= false;
-          const user_uid= user.uid;
+          const user_uid= user?.uid;
           const isApproved= false;
       const imageHostKey = process.env.REACT_APP_IMAGE_API;
       console.log( imageHostKey);
