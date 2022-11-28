@@ -3,7 +3,7 @@ import React from 'react';
 import toast from 'react-hot-toast';
 
 const ProductModal = ({user,product,setProduct}) => {
-  const {name,resale_price,_id} = product;
+  const {name,resale_price,_id,image} = product;
   console.log(product);
   const {displayName,email,uid} = user;
 
@@ -21,6 +21,7 @@ const ProductModal = ({user,product,setProduct}) => {
       meeting_location,
         name:displayName,
         phone,
+        image,
         email, 
         product_item :name,
         price:resale_price,

@@ -7,16 +7,16 @@ import Info from "./Info";
 
 const Home = () => {
 
-  const [advertises,setAdvertises] = useState([]);
-  useEffect(()=>{
-    fetch('http://localhost:5000/alladvertise')
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-      setAdvertises(data)
-    })
-  },[])
-
+//   const [advertises,setAdvertises] = useState([]);
+//   useEffect(()=>{
+//     fetch('http://localhost:5000/alladvertise')
+//     .then(res=>res.json())
+//     .then(data=>{
+//       console.log(data);
+//       setAdvertises(data)
+//     })
+//   },[])
+// console.log(advertises);
 
         // const {advertised} =useParams()
         // console.log(advertised);
@@ -126,7 +126,7 @@ const Home = () => {
             </div>
         </div>
       </div  >
-      <Advertise advertises={advertises}></Advertise>
+      <Advertise></Advertise>
       <Info></Info>
     </div>
   );

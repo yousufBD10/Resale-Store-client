@@ -21,6 +21,10 @@ const MyOrders = () => {
     
 
 
+    const handleMyOrdersDelete= (data)=>{
+      console.log(data);
+    }
+
     if(loading){
         <div className="text-center">
         <Spinner aria-label="Center-aligned spinner example" />
@@ -34,7 +38,7 @@ const MyOrders = () => {
           <thead>
             <tr>
               <th>No.</th>
-              <th>User Name</th>
+              <th>Image</th>
               <th>Products Name</th>
               <th>Payment status</th>
             
@@ -46,7 +50,11 @@ const MyOrders = () => {
             {
               orders.map((order,i)=> <tr key={order._id}>
                 <th>{i+1}</th>
-        <td><p className='font-bold'>{order.name}</p></td>
+                <td> <div className="avatar">
+  <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+    <img  src={order.image} alt='' />
+  </div>
+</div></td>
                 <td>  <p className='font-bold'>{order.product_item}</p></td>
                 
                 <td>{
@@ -59,7 +67,7 @@ const MyOrders = () => {
                 }</td>
                  
                
-                  <th><button className='btn btn-error  btn-sm' > Delete</button></th>
+                  <th><button onClick={()=>handleMyOrdersDelete()} className='btn btn-error  btn-sm' > Delete</button></th>
               </tr>
               
               )

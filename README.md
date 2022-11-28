@@ -1,3 +1,24 @@
+# My website feature
+**Buy & Sell  website** \
+**website name : Resale Store** \
+**website Address : https://homedeco-247ee.web.app/** 
+**Server API : http://localhost:500** 
+**Server API : http://localhost:500/blog** 
+### My Categorise
+* Apple
+* Samsung
+* Xioami
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

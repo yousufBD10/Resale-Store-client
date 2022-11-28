@@ -5,7 +5,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const Dashboard = () => {
     const {user,loading} = useContext(AuthContext);
-    console.log(user?.displayName );
+    
 
     if(loading){
         return <progress className="progress center w-56"></progress>

@@ -29,6 +29,7 @@ const AddProducts = () => {
     const handleAddproduct = (data) => {
       const date = new Date();
           const verified= false;
+          const payment_status= "available";
           const user_uid= user?.uid;
           const isApproved= false;
       const imageHostKey = process.env.REACT_APP_IMAGE_API;
@@ -73,7 +74,8 @@ const AddProducts = () => {
            user_uid,
          location: Location,
            phone,description,
-                  image
+                  image,
+                  payment_status
               }
               fetch('http://localhost:5000/products', {
                   method: 'POST',
