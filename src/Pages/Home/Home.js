@@ -101,21 +101,21 @@ const Home = () => {
                 </div>)
                } */}
                
-               <Link to='/Samsung'> <div className="p-16  hover:bg-zinc-300 bg-white flex justify-center ">
+               <Link to='/Samsung'> <div className="p-16 mx-auto w-64 mb-4  hover:bg-zinc-300 bg-white flex justify-center ">
                <div>
-               <img className="w-32 mb-7" src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1647622740-samsung-galaxy-a53-1647622731.jpg?crop=1xw:1xh;center,top&resize=480:*" alt="" />
+               <img className="w-32  mb-7" src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1647622740-samsung-galaxy-a53-1647622731.jpg?crop=1xw:1xh;center,top&resize=480:*" alt="" />
                 <h4>Samsung</h4></div>
 
                 </div></Link>
 
-               <Link to='/Apple'> <div className="p-16 hover:bg-zinc-300 bg-white flex justify-center">
+               <Link to='/Apple'> <div className="p-16 w-64 mx-auto mb-4  hover:bg-zinc-300 bg-white flex justify-center">
                 <div>
                 <img className="w-32 mb-7" src="https://d2d22nphq0yz8t.cloudfront.net/88e6cc4b-eaa1-4053-af65-563d88ba8b26/https://media.croma.com/image/upload/v1662655288/Croma%20Assets/Communication/Mobiles/Images/261985_pqnh1v.png/mxw_640,f_auto" alt="" />
                 <h4>Apple</h4>
                 </div>
 
                 </div></Link>
-               <Link to='/Xioami'> <div className="p-16 hover:bg-zinc-300 flex justify-center bg-white">
+               <Link to='/Xioami'> <div className="p-16 w-64 mx-auto  hover:bg-zinc-300 flex justify-center bg-white">
                <div>
                <img className="w-32 mb-7" src="https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi-cc9-pro-1.jpg" alt="" />
                 <h4>Xioami</h4>

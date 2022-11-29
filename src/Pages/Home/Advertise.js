@@ -28,55 +28,29 @@ if(isLoading){
   <Spinner aria-label="Center-aligned spinner example" />
 </div>
 }
-    return (
-     
-   <div>
- {advertises.length ? <h1 className='text-3xl font-bold my-6 text-center'>Advertise Section</h1>: <></> }
- 
 
-      <div className=" grid gap-5 lg:grid-cols-3 md:grid-cols-2">
-  
-  {advertises.map((advertise) => (
-    <Card key={advertise._id} >
-      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        {advertise?.name}
-      </h5>
-      <p className="text-sm font-bold tracking-tight text-gray-900 dark:text-white">
-        {advertise?.name}
-      </p>
-      <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Original Price: ${advertise?.original_price}
-      </h5>
-      <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-        Resale Price: ${advertise?.resale_price}
-      </h5>
-      <p className="font-bold tracking-tight text-gray-900 dark:text-white">
-        Used : {advertise?.used}
-      </p>
-     
-        <p>Location : {advertise?.location}</p>
-        <p>Post Date : {advertise?.post_date?.slice(0,10)}</p>
-      
-     {
-      advertise?.isVarified
-       ? <div className="flex">
-        <p>Seller Name : </p>
-        
-    </div> : <p className="font-normal text-gray-700 dark:text-gray-400">
-      Seller Name : {advertise?.seller_name}
-    </p>
-     }
-      <div>
-        {/* <Button onClick={()=> setOpenModal(true)}  className="w-full">Book Now</Button> */}
-    
+return (
+  <div className='mb-16'>
+        {advertises.length ? <h1 className='text-3xl font-bold my-8 text-center '>Advertise Section</h1>: <></> }
+       <div className='gap-5 grid lg:grid-cols-3 md:grid-cols-2  m-auto'>
+       {
+          advertises.map(advertise=>  <div key={advertise._id} className="card lg:w-64 w-96 mx-auto bg-base-50 shadow-xl cursor-pointer   image-full">
+          <figure><img src={advertise.image} alt="" /></figure>
+          <div className="card-body ">
+            <div className="card-actions justify-start mt-28">
+            <h2 className="card-title">{advertise.name}</h2>
+            {
+              advertise.payment_status ?  <p>Status : Available</p>:   <p>Status : Sold {}</p> 
+            }
+            <p>Price :  $<span className='font-bold'>{advertise.resale_price}</span></p>
+          
+            
+            </div>
+          </div>
+        </div>)
+        }
+       </div>
       </div>
-    </Card>
-  ))}
-
-
-</div>
-  </div>
-     
     );
 };
 

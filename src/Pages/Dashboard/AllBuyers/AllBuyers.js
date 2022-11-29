@@ -19,39 +19,42 @@ const AllBuyers = () => {
     });
 
     
-const handleDelete = (data)=>{
-  // console.log(data.user_uid);
-  const {user_uid} = data;
-  // fetch(`http://localhost:5000/dashbord/buyer/${user_uid}`, {
-  //           method: 'DELETE', 
-  //           // headers: {
-  //           //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-  //           // }
-  //       })
-  //       .then(res => res.json())
-  //       .then(data => {
-  //           if(data.deletedCount > 0){
-  //               refetch();
-  //               // handleDeleteProduct(user_uid)
-  //               toast.success(`Users deleted successfully`)
-  //           }
-  //       })
+const handleDelete = (id)=>{
+  // console.log(id.user_uid);
+  const {user_uid} = id;
+  fetch(`http://localhost:5000/dashbord/buyer/${id}`, {
+            method: 'DELETE', 
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.deletedCount > 0){
+                refetch();
+                //  handleDeleteProduct(user_uid)
+                toast.success(`Users deleted successfully`)
+            }
+        })
    console.log(user_uid);
 }
-  // fetch(`http://localhost:5000/dashbord/product/${user_uid}`, {
-  //           method: 'DELETE', 
-  //           // headers: {
-  //           //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-  //           // }
-  //       })
-  //       .then(res => res.json())
-  //       .then(data => {
-  //           if(data.deletedCount > 0){
-  //               refetch();
+// const handleDeleteProduct = (user_uid)=>{
+//   console.log(user_uid);
+//   fetch(`http://localhost:5000/dashbord/product/${user_uid}`, {
+//             method: 'DELETE', 
+//             // headers: {
+//             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+//             // }
+//         })
+//         .then(res => res.json())
+//         .then(data => {
+//             if(data.deletedCount > 0){
+//                 refetch();
                
-  //           }
-  //       })
+//             }
+//         })
 // }
+
 
     if(isLoading){
       <div className="text-center">
@@ -78,7 +81,7 @@ const handleDelete = (data)=>{
            {i+1}
             </Table.Cell>
             <Table.Cell>{br.name}</Table.Cell>
-            <Table.Cell><button onClick={()=>console.log(br.user_uid)} className="btn btn-error btn-sm">Delete</button></Table.Cell>
+            <Table.Cell><button onClick={()=>handleDelete(br._id)} className="btn btn-error btn-sm">Delete</button></Table.Cell>
             <Table.Cell>{br.email}</Table.Cell>
           </Table.Row> )
           }

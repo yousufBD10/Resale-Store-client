@@ -9,12 +9,16 @@ import ApprovedPost from "../../Pages/Dashboard/ApprovedPost/ApprovedPost";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import DashboardLeyout from "../../Pages/Dashboard/DashboardLeyout";
 import MyProducts from "../../Pages/Dashboard/MyProduct/MyProducts";
+import Report from "../../Pages/Dashboard/Report/Report";
 import DisplayErrors from "../../Pages/DisplayErrors/DisplayErrors";
 
 
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyOrders from "../../Pages/MyOrders/MyOrders";
+import Wishlist from "../../Pages/MyOrders/Wishlist";
+
+import Payments from "../../Pages/payments/Payments";
 import ProductCard from "../../Pages/ProductCard/ProductCard";
 import Register from "../../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoute";
@@ -97,8 +101,20 @@ const router = createBrowserRouter([
                 
             },
             {
+                path: '/dashboard/payment/:id',
+         element:<Payments></Payments>,
+      loader: ({params})=> fetch(`http://localhost:5000/myorders/payments/${params.id}`)
+                
+            },
+            {
                 path: '/dashboard/myproducts',
                 element:<MyProducts></MyProducts>
+                
+            },
+            {
+                path: '/dashboard/reporteditems/:id',
+                element:<Report></Report>,
+                loader: ()=> fetch(`http://localhost:5000/dashboard/reported`)
                 
             }
         ]

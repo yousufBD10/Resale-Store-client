@@ -17,7 +17,7 @@ const AllSellers = () => {
       },
 
     });
-  console.log(allsellers);
+  
  
 
   const handleVerified=(id) =>{
@@ -48,7 +48,7 @@ const handleUserVerified=(id) =>{
   .then(res =>res.json())
   .then(data=>{
       console.log(data);
-   
+      refetch()
   })
 
 
@@ -57,7 +57,7 @@ const handleUserVerified=(id) =>{
 
 
 const handleDelete = (data)=>{
-  // console.log(data.user_uid);
+  console.log(data.user_uid);
   const {user_uid} = data;
   fetch(`http://localhost:5000/dashbord/seller/${data.user_uid}`, {
             method: 'DELETE', 

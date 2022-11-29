@@ -29,7 +29,8 @@ const AddProducts = () => {
     const handleAddproduct = (data) => {
       const date = new Date();
           const verified= false;
-          const payment_status= "available";
+          const payment_status = false;
+          const advertiseBtn = false;
           const user_uid= user?.uid;
           const isApproved= false;
       const imageHostKey = process.env.REACT_APP_IMAGE_API;
@@ -75,13 +76,14 @@ const AddProducts = () => {
          location: Location,
            phone,description,
                   image,
+                  advertiseBtn,
                   payment_status
               }
               fetch('http://localhost:5000/products', {
                   method: 'POST',
                   headers: {
                       'content-type': 'application/json', 
-                      authorization: `bearer ${localStorage.getItem('accessToken')}`
+                      // authorization: `bearer ${localStorage.getItem('accessToken')}`
                   },
                   body: JSON.stringify(product)
               })

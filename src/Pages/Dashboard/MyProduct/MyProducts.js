@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 
@@ -47,6 +48,7 @@ const MyProducts = () => {
         .then(res =>res.json())
         .then(data=>{
             console.log(data);
+            toast.success('Your products delete successful')
             refetch()
          
         })
@@ -69,6 +71,7 @@ const MyProducts = () => {
         <th>Approved status</th>
         <th>Actions</th>
         <th>Sell status</th>
+        <th>Price</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -89,10 +92,11 @@ const MyProducts = () => {
           }</td>
             <th>
               {
-                product?.isAdvertise ? <p className='text-green-500 font-bold'>Advertised</p> :<button onClick={()=>handleAdversise(product._id)} className='btn btn-primary  btn-sm' > Advertise</button>
+                product?.advertiseBtn ? <p className='text-green-500 font-bold'>Advertised</p> :<button onClick={()=>handleAdversise(product._id)} className='btn btn-primary  btn-sm' > Advertise</button>
               }
             </th>
           <td><p className='font-bold'>Available</p></td>
+          <td><p className='font-bold'>$ {product.resale_price}</p></td>
             <th><button onClick={()=>handleDeleteProduct(product._id)} className='btn btn-error  btn-sm' > Delete</button></th>
         </tr>
         
