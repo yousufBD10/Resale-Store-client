@@ -5,6 +5,7 @@ import { AuthContext } from "../../contexts/AuthProvider";
 import useAdmin from "../../Hooks/useAdmin";
 import useBuyers from "../../Hooks/useBuyers";
 import useSellers from "../../Hooks/useSellers";
+import Footers from "../Shared/Footer/Footers";
 import Navbars from "../Shared/Navbar/Navbars";
 
 const DashboardLeyout = () => {
@@ -28,7 +29,7 @@ const DashboardLeyout = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="dashboardDawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 ">
+          <ul className="menu p-4 w-80  bg-zinc-100 ">
            
 
 
@@ -82,6 +83,7 @@ const DashboardLeyout = () => {
           </ul>
         </div>
       </div>
+      <Footers></Footers>
     </div>
   );
 };

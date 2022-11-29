@@ -1,14 +1,16 @@
 import { Navbar } from 'flowbite-react';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import logo from '../../../assets/info_image/resale.png'
 
 const Navbars = () => {
+  const navigate = useNavigate()
   const {user,logOut} = useContext(AuthContext);
   const handleLogOut=()=>{
     logOut()
     .then(()=>{
+      navigate('/')
 
     })
     .catch(error=>console.error(error))

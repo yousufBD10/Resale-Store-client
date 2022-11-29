@@ -1,13 +1,34 @@
 # My website feature
 **Buy & Sell  website** \
 **website name : Resale Store** \
-**website Address : https://resalestore-ce485.web.app/** 
+**website Address : https://resalestore-ce485.web.app/** \
 **Server API : https://assignment-12-server-rho.vercel.app/** 
 
-### My Categorise
+### Products Categorise
 * Apple
 * Samsung
 * Xioami
+ ### Admin role
+ * Maintain all 
+ * Delete any users
+ * Delete any Products
+ * Get approved add to products
+ * Verify users
+### Service role
+* Sellers
+* Buyers
+
+### Sellers services
+* Add Products 
+* Advertise items and show home page
+* Delete any time your products
+
+### Buyers services 
+* Booking any products 
+* See your booking products My Orders menu
+* Delete your products any time
+* Payments any international card 
+
 
 
 
