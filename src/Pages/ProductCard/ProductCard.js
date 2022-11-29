@@ -18,7 +18,7 @@ const ProductCard = () => {
   console.log(products);
 
   // useEffect(() => {
-  //   axios.get('http://localhost:5000/allusers').then((response) => {
+  //   axios.get('https://assignment-12-server-rho.vercel.app/allusers').then((response) => {
   //     setVerified(response.data);
   //   });
   // }, []);
@@ -26,7 +26,7 @@ const ProductCard = () => {
 
   const handleReport = (data)=>{
   
-    fetch(`http://localhost:5000/dashboard/reported/${data}`, {
+    fetch(`https://assignment-12-server-rho.vercel.app/dashboard/reported/${data}`, {
       method: 'PUT',
       // headers: {
       //     'content-type': 'application/json', 

@@ -13,7 +13,7 @@ const MyProducts = () => {
       
         queryKey:['myorders',user?.email],
         queryFn:async()=>{
-            const res = await fetch(`http://localhost:5000/dashboard/myproducts?email=${user?.email}`);
+            const res = await fetch(`https://assignment-12-server-rho.vercel.app/dashboard/myproducts?email=${user?.email}`);
             const data = await res.json();
             return data;
           }
@@ -23,7 +23,7 @@ const MyProducts = () => {
 
         const handleAdversise =(id)=>{
           console.log(id);
-          fetch(`http://localhost:5000/dashboard/advertise/${id}`,{
+          fetch(`https://assignment-12-server-rho.vercel.app/dashboard/advertise/${id}`,{
             method: 'PUT',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const MyProducts = () => {
 
         const handleDeleteProduct =(id)=>{
           console.log(id);
-          fetch(`http://localhost:5000/dashboard/productsdelete/${id}`,{
+          fetch(`https://assignment-12-server-rho.vercel.app/dashboard/productsdelete/${id}`,{
             method: 'DELETE',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`

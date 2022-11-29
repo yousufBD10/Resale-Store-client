@@ -11,7 +11,7 @@ const AllBuyers = () => {
     const { data: buyers = [], refetch,isLoading } = useQuery({
       queryKey: [buyer],
       queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/dashboard/${buyer}`);
+        const res = await fetch(`https://assignment-12-server-rho.vercel.app/dashboard/${buyer}`);
         const data = await res.json();
         return data;
       },
@@ -22,7 +22,7 @@ const AllBuyers = () => {
 const handleDelete = (id)=>{
   // console.log(id.user_uid);
   const {user_uid} = id;
-  fetch(`http://localhost:5000/dashbord/buyer/${id}`, {
+  fetch(`https://assignment-12-server-rho.vercel.app/dashbord/buyer/${id}`, {
             method: 'DELETE', 
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -40,7 +40,7 @@ const handleDelete = (id)=>{
 }
 // const handleDeleteProduct = (user_uid)=>{
 //   console.log(user_uid);
-//   fetch(`http://localhost:5000/dashbord/product/${user_uid}`, {
+//   fetch(`https://assignment-12-server-rho.vercel.app/dashbord/product/${user_uid}`, {
 //             method: 'DELETE', 
 //             // headers: {
 //             //     authorization: `bearer ${localStorage.getItem('accessToken')}`

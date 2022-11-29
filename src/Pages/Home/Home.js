@@ -9,7 +9,7 @@ const Home = () => {
 
 //   const [advertises,setAdvertises] = useState([]);
 //   useEffect(()=>{
-//     fetch('http://localhost:5000/alladvertise')
+//     fetch('https://assignment-12-server-rho.vercel.app/alladvertise')
 //     .then(res=>res.json())
 //     .then(data=>{
 //       console.log(data);
@@ -25,7 +25,7 @@ const Home = () => {
   
 //     queryKey:['alladvertise'],
 //     queryFn:async()=>{
-//         const res = await fetch('http://localhost:5000/alladvertise');
+//         const res = await fetch('https://assignment-12-server-rho.vercel.app/alladvertise');
 //         const data = await res.json();
 //         return data;
 //     }

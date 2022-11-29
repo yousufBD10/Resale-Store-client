@@ -14,7 +14,7 @@ const [refetch ,setRefetch] = useState(false);
     // console.log(user?.email);
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/dashboard/bookings?email=${user?.email}`)
+        axios.get(`https://assignment-12-server-rho.vercel.app/dashboard/bookings?email=${user?.email}`)
         .then(res => {
          
         setOrders(res.data);
@@ -28,7 +28,7 @@ const [refetch ,setRefetch] = useState(false);
 
     const handleMyOrdersDelete= (id)=>{
       setRefetch(false);
-      fetch(`http://localhost:5000/dashboard/myorderdelete/${id}`,{
+      fetch(`https://assignment-12-server-rho.vercel.app/dashboard/myorderdelete/${id}`,{
         method: 'DELETE',
         // headers: {
         //     authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         {
        path:'/:brand',
        element:<PrivateRoutes><ProductCard></ProductCard></PrivateRoutes>,
-       loader: ({params})=> fetch(`http://localhost:5000/${params.brand}`)
+       loader: ({params})=> fetch(`https://assignment-12-server-rho.vercel.app/${params.brand}`)
 
         },
         {
@@ -56,13 +56,13 @@ const router = createBrowserRouter([
           {
             path:'/blog',
             element: <Blog></Blog>,
-            loader: ()=> fetch("http://localhost:5000/blog")
+            loader: ()=> fetch("https://assignment-12-server-rho.vercel.app/blog")
         },
         
         {
             path:'/blog/:id',
             element: <BlogDetails></BlogDetails>,
-            loader: ({params})=> fetch(`http://localhost:5000/blog/${params.id}`)
+            loader: ({params})=> fetch(`https://assignment-12-server-rho.vercel.app/blog/${params.id}`)
            
         },
        ]
@@ -78,12 +78,12 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/:seller',
                 element:<AllSellers></AllSellers>,
-                // loader: ({params})=> fetch(`http://localhost:5000/dashboard/${params.seller}`)
+                // loader: ({params})=> fetch(`https://assignment-12-server-rho.vercel.app/dashboard/${params.seller}`)
             },
             {
                 path: '/dashboard/:buyer',
                 element:<AllBuyers></AllBuyers>,
-                // loader: ({params})=> fetch(`http://localhost:5000/dashboard/${params.buyer}`)
+                // loader: ({params})=> fetch(`https://assignment-12-server-rho.vercel.app/dashboard/${params.buyer}`)
             },
             {
                 path: '/dashboard/addproducts',
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/payment/:id',
          element:<Payments></Payments>,
-      loader: ({params})=> fetch(`http://localhost:5000/myorders/payments/${params.id}`)
+      loader: ({params})=> fetch(`https://assignment-12-server-rho.vercel.app/myorders/payments/${params.id}`)
                 
             },
             {
@@ -114,7 +114,7 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/reporteditems/:id',
                 element:<Report></Report>,
-                loader: ()=> fetch(`http://localhost:5000/dashboard/reported`)
+                loader: ()=> fetch(`https://assignment-12-server-rho.vercel.app/dashboard/reported`)
                 
             }
         ]

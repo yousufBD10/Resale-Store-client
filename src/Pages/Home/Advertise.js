@@ -12,7 +12,7 @@ const Advertise = () => {
           
           queryKey:['alladvertise'],
           queryFn:async()=>{
-              const res = await fetch('http://localhost:5000/alladvertise');
+              const res = await fetch('https://assignment-12-server-rho.vercel.app/alladvertise');
               const data = await res.json();
               return data;
             }

@@ -29,7 +29,7 @@ const ProductModal = ({user,product,setProduct}) => {
         user_uid: uid
     }
     console.log(booked);
-    fetch('http://localhost:5000/booking',{
+    fetch('https://assignment-12-server-rho.vercel.app/booking',{
       method: "POST",
       headers: {
         'content-type' : 'application/json'

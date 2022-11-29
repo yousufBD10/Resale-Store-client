@@ -1,9 +1,9 @@
 # My website feature
 **Buy & Sell  website** \
 **website name : Resale Store** \
-**website Address : https://homedeco-247ee.web.app/** 
-**Server API : http://localhost:500** 
-**Server API : http://localhost:500/blog** 
+**website Address : https://resalestore-ce485.web.app/** 
+**Server API : https://assignment-12-server-rho.vercel.app/** 
+
 ### My Categorise
 * Apple
 * Samsung

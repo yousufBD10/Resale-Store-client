@@ -11,7 +11,7 @@ const AllSellers = () => {
     const { data: allsellers = [], refetch } = useQuery({
       queryKey: [seller],
       queryFn: async () => {
-        const res = await fetch(`http://localhost:5000/dashboard/${seller}`);
+        const res = await fetch(`https://assignment-12-server-rho.vercel.app/dashboard/${seller}`);
         const data = await res.json();
         return data;
       },
@@ -21,7 +21,7 @@ const AllSellers = () => {
  
 
   const handleVerified=(id) =>{
-    fetch(`http://localhost:5000/dashboard/users/admin/${id}`,{
+    fetch(`https://assignment-12-server-rho.vercel.app/dashboard/users/admin/${id}`,{
         method: 'PUT',
         // headers: {
         //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const AllSellers = () => {
 }
 
 const handleUserVerified=(id) =>{
-  fetch(`http://localhost:5000/dashboard/userverified/admin/${id}`,{
+  fetch(`https://assignment-12-server-rho.vercel.app/dashboard/userverified/admin/${id}`,{
       method: 'PUT',
       // headers: {
       //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -59,7 +59,7 @@ const handleUserVerified=(id) =>{
 const handleDelete = (data)=>{
   console.log(data.user_uid);
   const {user_uid} = data;
-  fetch(`http://localhost:5000/dashbord/seller/${data.user_uid}`, {
+  fetch(`https://assignment-12-server-rho.vercel.app/dashbord/seller/${data.user_uid}`, {
             method: 'DELETE', 
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -76,7 +76,7 @@ const handleDelete = (data)=>{
 }
   const handleDeleteProduct = (user_uid)=>{
   console.log(user_uid);
-  fetch(`http://localhost:5000/dashbord/product/${user_uid}`, {
+  fetch(`https://assignment-12-server-rho.vercel.app/dashbord/product/${user_uid}`, {
             method: 'DELETE', 
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`

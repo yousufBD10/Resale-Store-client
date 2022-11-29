@@ -7,14 +7,14 @@ const ApprovedPost = () => {
   const { data: posts = [], refetch } = useQuery({
     queryKey: ["approvedpost"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/dashboard/approvedpost");
+      const res = await fetch("https://assignment-12-server-rho.vercel.app/dashboard/approvedpost");
       const data = await res.json();
       return data;
     },
   });
 
     const handleApproved = (id)=>{
-        fetch(`http://localhost:5000/dashboard/approvedrequest/${id}`,{
+        fetch(`https://assignment-12-server-rho.vercel.app/dashboard/approvedrequest/${id}`,{
             method: "PUT",
             // headers:{
 
