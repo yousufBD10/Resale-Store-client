@@ -112,9 +112,9 @@ const router = createBrowserRouter([
                 
             },
             {
-                path: '/dashboard/reporteditems/:id',
+                path: '/dashboard/reporteditems',
                 element:<Report></Report>,
-                loader: ()=> fetch(`https://assignment-12-server-rho.vercel.app/dashboard/reported`)
+                // loader: ()=> fetch(`https://assignment-12-server-rho.vercel.app/dashboard/reported`)
                 
             }
         ]
