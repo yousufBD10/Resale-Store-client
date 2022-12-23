@@ -15,7 +15,8 @@ const ProductCard = () => {
   const [product,setProduct] = useState(null);
   
   const products = useLoaderData();
-  console.log(products);
+  const {  } = products;
+   console.log(products);
 
   // useEffect(() => {
   //   axios.get('https://assignment-12-server-rho.vercel.app/allusers').then((response) => {

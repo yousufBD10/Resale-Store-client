@@ -71,7 +71,7 @@ const Home = () => {
                 alt="..."
               />
               <img
-                src="https://b2c-contenthub.com/wp-content/uploads/2022/09/iPhone-14-Pro_review_1.jpg?quality=50&strip=all"
+                src="https://www.techadvisor.com/wp-content/uploads/2022/06/best_smartphone_apr_2022_hero.jpg?quality=50&strip=all"
                 alt="..."
               />
               <img
@@ -79,7 +79,7 @@ const Home = () => {
                 alt="..."
               />
               <img
-                src="https://www.techadvisor.com/wp-content/uploads/2022/06/best_smartphone_apr_2022_hero.jpg?quality=50&strip=all"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJncYA6BulRCCWQcHhVK2oViKGc_AIM4x0bG8zhvx0fM2UBp-aiAStemoZdhDs-Mazy94&usqp=CAU"
                 alt="..."
               />
             </Carousel>
