@@ -16,7 +16,7 @@ const Navbars = () => {
     .catch(error=>console.error(error))
 }
     return (
-        <Navbar className='bg-sky-800 text-white  '
+        <Navbar className='shadow-sm p-0 m-0'
         fluid={true}
         rounded={true}
       >
@@ -58,10 +58,10 @@ const Navbars = () => {
           </Navbar.Link> */}
          <Link to='/blog'>Blog</Link>
          {
-           user?.uid ? <button onClick={handleLogOut} type="button" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">LogOut</button> :
+           user?.uid ? <button onClick={handleLogOut} type="button" className="text-gray-900  focus:outline-none hover:bg-gray-100   font-medium  text-sm px-5  dark:bg-gray-800 dark:text-white  dark:hover:bg-gray-700  ">LogOut</button> :
            <>
-           <Link to='/login'><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</button></Link>
-          <Link to='/register'><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign Up</button></Link>
+           <Link to='/login'><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5  mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Login</button></Link>
+          <Link to='/register'><button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign Up</button></Link>
            
            </>
         }
